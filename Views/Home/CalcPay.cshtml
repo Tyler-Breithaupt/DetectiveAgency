@@ -1,0 +1,44 @@
+﻿@model DetectiveAgency.Models.Employee
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>New Employee Form</title> 
+</head> 
+<body>
+    <h1>New Employee Form</h1> 
+    <form asp-action="CalcPay" method="post"> 
+        <div>
+            <label asp-for="Id">Employee ID:</label> 
+            <input asp-for="Id" readonly />
+        </div>
+        <div>
+            <label asp-for="Name">Employee Name:</label> 
+            <input asp-for="Name" readonly />
+        </div>
+        <div>
+            <label asp-for="Hours">Hours Worked:</label> 
+            <input asp-for="Hours" />
+        </div>
+        <div>
+            <label asp-for="Rate">Hourly Rate:</label> 
+            <input asp-for="Rate" />
+        </div>
+        <div>
+            <label>Weekly Gross Pay:</label>
+            <input value="@Model.Hours * @Model.Rate" readonly />
+        </div>
+        <button type="submit">Calculate Gross Pay</button> 
+        <button asp-controller="Home" asp-action="Index">Clear</button>
+    </form>
+</body> 
+</html>
+
+
+
+
+
