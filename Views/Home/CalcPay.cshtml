@@ -13,12 +13,12 @@
     <h1>New Employee Form</h1> 
     <form asp-action="CalcPay" method="post"> 
         <div>
-            <label asp-for="Id">Employee ID:</label> 
-            <input asp-for="Id" readonly />
+            <label asp-for="Id">Employee ID:</label>
+            <input asp-for="Id" />
         </div>
         <div>
             <label asp-for="Name">Employee Name:</label> 
-            <input asp-for="Name" readonly />
+            <input asp-for="Name" />
         </div>
         <div>
             <label asp-for="Hours">Hours Worked:</label> 
@@ -30,7 +30,7 @@
         </div>
         <div>
             <label>Weekly Gross Pay:</label>
-            <input value="@Model.Hours * @Model.Rate" readonly />
+            <label>@ViewBag.Salary.ToString("c2")</label>
         </div>
         <button type="submit">Calculate Gross Pay</button> 
         <button asp-controller="Home" asp-action="Index">Clear</button>
